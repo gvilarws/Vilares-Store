@@ -1,0 +1,121 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #000000;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .produto {
+    max-width: 600px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgb(255, 0, 0);
+      border: 5px solid rgb(255, 0, 0);
+      position: relative;
+      overflow: hidden; /* ESSENCIAL */
+      z-index: 1; 
+  }
+  
+  
+  .imagem {
+    width: 100%;
+    border-radius: 10px;
+    display: none;
+    transition: transform 0.3s ease; /* Transição suave */
+}
+
+.imagem-desktop:hover,
+.imagem-tablet:hover,
+.imagem-celular:hover {
+    transform: scale(1.05); /* Zoom de 5% */
+}
+  
+ 
+  /* Desktop */
+@media (min-width: 769px) {
+  .imagem-desktop {
+    display: block;
+  }
+}
+
+  
+  /* Tablet */
+  @media (max-width: 768px) {
+    .imagem-desktop { display: none; }
+    .imagem-tablet { display: block; }
+  }
+  
+  /* Celular */
+  @media (max-width: 480px) {
+    .imagem-tablet { display: none; }
+    .imagem-celular { display: block; }
+  }
+
+  nav {
+    background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Fica acima do resto */
+}
+
+
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    background-color: #ffffff;
+    justify-content: space-around;
+    transition: background-color 0.3s ease;
+  }
+
+
+.menu li {
+    padding: 0;
+}
+
+.menu a {
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #ffaaaa;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+h1 { 
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border-bottom: 5px solid #ffffff;
+    padding-bottom: 10px;
+    box-shadow: 0 0 2px #f4f4f400;
+}
+h2{
+  color: #ffffff;
+}
+h3{
+  color: #000000;
+}
+
+
+p{color: #000000;
+
+}

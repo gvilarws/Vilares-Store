@@ -1,121 +1,175 @@
 body {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #000000;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .produto {
-    max-width: 600px;
-    margin: auto;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 0 40px rgb(255, 0, 0);
-      border: 5px solid rgb(255, 0, 0);
-      position: relative;
-      overflow: hidden; /* ESSENCIAL */
-      z-index: 1; 
-  }
-  
-  
-  .imagem {
-    width: 100%;
-    border-radius: 10px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #000000;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ---------- MENU RESPONSIVO ---------- */
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  color: #000;
+  background-color: #fff;
+  text-align: left;
+}
+
+nav {
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  background-color: #ffffff;
+  justify-content: space-around;
+  transition: background-color 0.3s ease;
+}
+
+.menu li {
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  color: rgb(0, 0, 0);
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #ffaaaa;
+  text-decoration: none;
+}
+
+/* Menu responsivo para telas menores */
+@media (max-width: 768px) {
+  .menu {
     display: none;
-    transition: transform 0.3s ease; /* Transição suave */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  #menu-toggle:checked + .menu-icon + .menu {
+    display: flex;
+  }
+
+  .menu li a {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+/* ---------- PRODUTOS E IMAGENS ---------- */
+
+.produto {
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgb(255, 0, 0);
+  border: 5px solid rgb(255, 0, 0);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.imagem {
+  width: 100%;
+  border-radius: 10px;
+  display: none;
+  transition: transform 0.3s ease;
 }
 
 .imagem-desktop:hover,
 .imagem-tablet:hover,
 .imagem-celular:hover {
-    transform: scale(1.05); /* Zoom de 5% */
+  transform: scale(1.05);
 }
-  
- 
-  /* Desktop */
+
+/* Padrão: esconde tudo */
+.imagem-desktop,
+.imagem-tablet,
+.imagem-celular {
+  display: none;
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .imagem-celular {
+    display: block;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+  .imagem-tablet {
+    display: block;
+  }
+}
+
+/* Desktop */
 @media (min-width: 769px) {
   .imagem-desktop {
     display: block;
   }
 }
 
-  
-  /* Tablet */
-  @media (max-width: 768px) {
-    .imagem-desktop { display: none; }
-    .imagem-tablet { display: block; }
-  }
-  
-  /* Celular */
-  @media (max-width: 480px) {
-    .imagem-tablet { display: none; }
-    .imagem-celular { display: block; }
-  }
-
-  nav {
-    background-color: #000000;
-  position: sticky;
-  top: 0;
-  z-index: 10; /* Fica acima do resto */
+/* Hover no card inteiro */
+.produto:hover {
+  box-shadow: 0 0 50px rgb(255, 80, 80);
+  transform: scale(1.01);
+  transition: all 0.3s ease;
 }
 
+/* ---------- TIPOGRAFIA E RODAPÉ ---------- */
 
-
-.menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    background-color: #ffffff;
-    justify-content: space-around;
-    transition: background-color 0.3s ease;
-  }
-
-
-.menu li {
-    padding: 0;
+h1 {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-bottom: 5px solid #ffffff;
+  padding-bottom: 10px;
 }
 
-.menu a {
-    display: block;
-    color: rgb(0, 0, 0);
-    padding: 15px 20px;
-    text-decoration: none;
-}
-
-.menu a:hover {
-    background-color: #ffaaaa;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-}
-h1 { 
-    color: rgb(255, 255, 255);
-    text-align: center;
-    border-bottom: 5px solid #ffffff;
-    padding-bottom: 10px;
-    box-shadow: 0 0 2px #f4f4f400;
-}
-h2{
+h2 {
   color: #ffffff;
 }
-h3{
+
+h3 {
   color: #000000;
 }
 
+p {
+  color: #000000;
+}
 
-p{color: #000000;
+section {
+  padding: 20px;
+  margin-bottom: 20px;
+}
 
+footer {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
 }
